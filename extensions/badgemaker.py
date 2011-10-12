@@ -20,8 +20,8 @@ import sys,os
 import inkex
 from math import *
 import getopt
-from openscad_poly.context import OSCADPolyContext
-from openscad_poly.svg_parser import SvgParser
+from badgemaker.context import BadgeContext
+from badgemaker.svg_parser import BadgeSvgParser
 
 class MyEffect(inkex.Effect):
   def __init__(self):
@@ -34,11 +34,11 @@ class MyEffect(inkex.Effect):
     self.context.generate()
 
   def effect(self):
-    self.context = OSCADPolyContext(self.svg_file)
-    parser = SvgParser(self.document.getroot())
+    self.context = BadgeContext(self.svg_file)
+    parser = BadgeSvgParser(self.document.getroot())
     parser.parse()
-    for entity in parser.entities:
-      entity.make_poly(self.context)
+    for layer in parser.layers:
+      self.context.add_layer(layer)
 
 if __name__ == '__main__':   #pragma: no cover
   e = MyEffect()

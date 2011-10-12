@@ -5,6 +5,8 @@ import entities
 from math import radians
 import sys, pprint
 
+from context import BadgeLayerContext
+
 def parseLengthWithUnits( str ):
   '''
   Parse an SVG value which may or may not have units attached
@@ -179,7 +181,6 @@ class SvgText(SvgIgnoredEntity):
 
 
 class SvgParser:
-
   entity_map = {
     'path': SvgPath,
     'rect': SvgRect,
@@ -196,9 +197,8 @@ class SvgParser:
     'text': SvgText
   }
 
-  def __init__(self, svg, pause_on_layer_change='false'):
+  def __init__(self, svg):
     self.svg = svg
-    self.pause_on_layer_change = pause_on_layer_change
     self.entities = []
 
   def getLength( self, name, default ):
@@ -226,8 +226,8 @@ class SvgParser:
 
   def parse(self):
     # 0.28222 scale determined by comparing pixels-per-mm in a default Inkscape file.
-    self.svgWidth = self.getLength('width', 354) * 0.28222
-    self.svgHeight = self.getLength('height', 354) * 0.28222
+    self.svgWidth = self.getLength('width', 266) * 0.28222
+    self.svgHeight = self.getLength('height', 266) * 0.28222
     self.recursivelyTraverseSvg(self.svg, [[0.28222, 0.0, -(self.svgWidth/2.0)], [0.0, -0.28222, (self.svgHeight/2.0)]])
 
   # TODO: center this thing
@@ -303,3 +303,24 @@ class SvgParser:
         self.entities.append(entity)
         return entity
     return None
+
+class BadgeSvgParser(SvgParser):
+  def __init__(self, svg):
+    self.svg = svg
+    self.layers = []
+
+  def parse(self):
+    # 0.28222 scale determined by comparing pixels-per-mm in a default Inkscape file.
+    svgWidth = self.getLength('width', 266) * 0.28222
+    svgHeight = self.getLength('height', 266) * 0.28222
+    layer_height = 3;
+    for layer_id in ['badge_outline','badge_inset','layer1','layer2','layer3']:
+      path = '//*[@id="%s"]' % layer_id
+      node = self.svg.xpath( path )
+      parser = SvgParser(node)
+      parser.recursivelyTraverseSvg(node, [[0.28222, 0.0, -(svgWidth/2.0)], [0.0, -0.28222, (svgHeight/2.0)]])
+      layer = BadgeLayerContext(layer_id, layer_height)
+      layer_height += 2
+      for entity in parser.entities:
+        entity.make_poly(layer)
+      self.layers.append(layer)

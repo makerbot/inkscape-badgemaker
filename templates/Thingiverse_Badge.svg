@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="266"
+   height="266"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.1 r9760"
+   sodipodi:docname="badge_template.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="73.862786"
+     inkscape:cy="132.6847"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer3"
+     showgrid="true"
+     units="px"
+     inkscape:window-width="1280"
+     inkscape:window-height="752"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Badge Outline"
+     inkscape:groupmode="layer"
+     id="badge_outline"
+     transform="translate(0,-786.35972)"
+     sodipodi:insensitive="true">
+    <path
+       sodipodi:type="arc"
+       style="fill:#c8c8c8;fill-opacity:1;stroke:none"
+       id="path2997"
+       sodipodi:cx="133"
+       sodipodi:cy="133"
+       sodipodi:rx="133"
+       sodipodi:ry="133"
+       d="m 266,133 a 133,133 0 1 1 -266,0 133,133 0 1 1 266,0 z"
+       transform="translate(0,786.6117)" />
+  </g>
+  <g
+     transform="translate(0,-786.35972)"
+     id="badge_inset"
+     inkscape:groupmode="layer"
+     inkscape:label="Badge Inset"
+     sodipodi:insensitive="true">
+    <path
+       id="path3779"
+       transform="translate(0,786.6117)"
+       style="fill:#646464;fill-opacity:1;stroke:none"
+       d="M 133,8.53125 C 64.153061,8.53125 8.53125,64.153061 8.53125,133 8.53125,201.84694 64.153061,257.46875 133,257.46875 201.84694,257.46875 257.46875,201.84694 257.46875,133 257.46875,64.153061 201.84694,8.53125 133,8.53125 z M 266,133 C 266,206.45387 206.45387,266 133,266 59.546128,266 0,206.45387 0,133 0,59.546128 59.546128,0 133,0 206.45387,0 266,59.546128 266,133 z"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Layer 1" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Layer 3" />
+</svg>

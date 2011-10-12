@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <_name>Thingiverse Badgemaker</_name>
+  <id>com.thingiverse.badgemaker</id>
+  <dependency type="extension">org.inkscape.output.svg.inkscape</dependency>
+  <dependency type="executable" location="extensions">badgemaker.py</dependency>
+  <dependency type="executable" location="extensions">inkex.py</dependency>
+  <param name="tab" type="notebook">
+    <page name="help" _gui-text="Help">
+      <_param name="ext_help" type="description" xml:space="preserve">Thingiverse Badgemaker.
+- Creates a 3D Thingiverse Badge from a 2D SVG using OpenSCAD.
+- Use the "Thingiverse Badge" template!
+- Don't alter the Badge Outline or Badge Inset layers except to change their fill color.
+- Add your content only to layers labeled 1, 2, and 3.
+- Layer 3 will be taller than Layer 2, which will be taller than Layer 1.
+- All text must be converted to paths.
+- Curves are approximated with line segments.
+
+More Info: http://github.com/makerbot/thingiverse-badgemaker/</_param>
+    </page>
+  </param>
+
+  <output>
+    <extension>.scad</extension>
+    <mimetype>application/x-scad</mimetype>
+    <_filetypename>Thingiverse Badge (*.scad)</_filetypename>
+    <_filetypetooltip>Convert 2D Thingiverse badge into 3D.</_filetypetooltip>
+    <dataloss>true</dataloss>
+  </output>
+  <script>
+    <command reldir="extensions" interpreter="python">badgemaker.py</command>
+  </script>
+</inkscape-extension>
